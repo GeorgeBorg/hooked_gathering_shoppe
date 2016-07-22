@@ -1,0 +1,30 @@
+<%= form_for(guest) do |f| %>
+
+	<% if guest.errors.any? %>
+		<div id="error_explanation" class="error-form">
+			<ul>
+			<% guest.errors.full_messages.each do |message| %>
+			  <li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.text_field :name , placeholder: "Guest's name", class: 'input' %>
+	</div>
+
+	<div class="field">
+		<%= f.text_area :bio,  rows: 3, placeholder: "Guest's Bio", class: 'input' %>
+	</div>
+
+	<div class="field file-field">
+    		<%= f.label :picture, "Picture", class: 'form-label' %>
+		<%= f.file_field :picture %>
+	</div>
+
+	<div class="actions">
+		<%= f.button "Submit", type: 'submit', class: "button", data: { disable_with: 'Submitting' } %>
+	</div>
+
+<% end %>

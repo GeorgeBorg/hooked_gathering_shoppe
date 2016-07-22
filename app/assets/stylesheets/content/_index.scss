@@ -1,0 +1,188 @@
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Section
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@include bem-block(section) {
+	padding: 60px 0;
+	text-align: center;
+	@extend .group;
+    
+	@include bem-element(header) {
+		text-align: center;
+		font-family: 'Permanent Marker', cursive;
+		@include font-size(40);
+		font-weight:800;
+		
+		@include breakpoint(medium) {
+			@include font-size(80);
+		}
+	}
+
+	@include bem-element(header, white) {
+		color: $white;
+	}
+
+	@include bem-element(header, n-mt) {
+		margin-top: 0;
+	}
+}
+
+@include bem-block(section, black) {
+	background-color: $black;
+}
+
+@include bem-block(section, no-padding) {
+	padding: 0;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Container
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@include bem-block(container) {
+	padding: 20px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	width: 100%;
+
+	@include bem-element(header) {
+		color:$black;
+		@include font-size(22);
+	}
+
+	@include bem-element(header, white) {
+		color:$white;
+	}
+
+	@include bem-element(header, font) {
+		font-family: 'Permanent Marker', cursive;
+	}
+
+	@include bem-element(text) {
+		color: $black;
+		@include font-size(14);
+		line-height: 22px;
+		text-align: justify;
+	}
+
+	@include bem-element(text, white) {
+		color: $white;
+	}
+
+	@include bem-element(iframe) {
+		width: 100%;
+		border:none;
+		height: 300px;
+		
+		@include breakpoint(small) {
+			height: 400px;
+		}
+
+		@include breakpoint(medium) {
+			height: 500px;
+		}
+	}
+	
+	@include bem-element(image) {
+		width: 80%;
+	}
+
+	@include bem-element(image, small) {
+		width: 30%;
+		margin: 5px 1.666666%;
+		float: left;
+	}
+
+	@include bem-element(button-wrapper) {
+		width: 50%;
+		margin:0 auto;
+		margin-top: 20px;
+	}
+
+	@include bem-element(button) {
+		width: 50%;
+		color:$white;
+		float: left;
+		@include font-size(16);
+		
+		&:hover {
+			color:$yellow1;
+		}
+	}
+}
+@include bem-block(container, no-float) {
+	float:none;
+}
+
+@include bem-block(container, half) {
+	width: 100%;
+	
+	@include breakpoint(medium) {
+		width: 50%;
+	}
+}
+
+@include bem-block(container, third) {
+	width: 100%;
+	
+	@include breakpoint(small) {
+		width: 50%;
+	}
+	@include breakpoint(medium) {
+		width: 33%;
+	}
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Slider
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+	    
+@include bem-block(slider) {
+	width: 100%;
+	margin: 40px 0;
+	
+	@include bem-element(image) {
+		width: 20%;
+		margin: 0 6.666667%;
+		float: left;
+		opacity: 1;
+		position: relative;
+		
+		@include breakpoint(medium) {
+			width: 10%;
+			margin: 0 11.66666%;
+		}
+	}
+	
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Tickets
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+@include bem-block(section) {
+
+	@include bem-element(page-header) {
+		font-family: 'Permanent Marker', cursive;
+		@include font-size(40);
+		color: $white;
+		font-weight:800;
+		float: left;
+		margin-top: 5px;
+	}
+
+	@include bem-element(tickets-icon) {
+		font-size: 30px;
+		margin: 20px;
+		color: $white;
+		float: left;
+	}
+}

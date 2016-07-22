@@ -1,0 +1,169 @@
+/* --------------------------------------------------
+Form Layout Template
+-------------------------------------------------- */
+.outer-form {
+	@extend .group;
+	background-color: $lightgrey;
+	min-width: 270px;
+	padding: 20px;
+	width: 80%;
+	margin: 125px auto;
+	border-radius: 3px;
+	border: 1px solid #dedede;
+	
+	@include breakpoint(medium-large) {
+		width: 50%;
+	}
+
+	h2 ,h3 {
+		font-weight: 300;
+		color: $grey4;
+		font-variant: small-caps;
+		float: left;
+	}
+
+	h2 {
+		margin:0 0 30px 0;
+		@include font-size(30);
+	}
+
+	h3 {
+		margin:0 0 10px 0;
+		@include font-size(20);
+	}
+	
+	input[type="submit"],input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="tel"], input[type="url"], input[type="number"], input[type="search"], input[type="file"] select, textarea  { 
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-color: #FAFAFA;
+		@include border-radius(4px);
+		background-clip: padding-box;
+		border: 1px solid #CCC;
+		padding: 10px;
+		margin: 5px 0;
+		resize: none;
+		
+		@include font-size(14);
+		width: 100%;
+		color:$grey6;
+	}
+
+	input[type="file"] + label {
+		color:red;
+	}
+
+	.field {
+
+		input {
+			width:100%;
+			color:$grey5;
+		}
+
+		.form-label {
+			@include font-size(14);
+			color: $grey8;
+		}
+	
+	}
+
+	.file-field {
+		background-color: #FAFAFA;
+		@include border-radius(4px);
+		background-clip: padding-box;
+		border: 1px solid #CCC;
+		padding: 10px;
+	}
+
+	.actions {
+		@extend .group;
+		text-align: center;
+		
+		.button {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background-color: $green;
+			@include border-radius(4px);
+			background-clip: padding-box;
+			border:none;
+			padding: 10px;
+			@include font-size(12);
+			width: 100%;
+			margin: 10px 0px;
+			color:$white;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-variant: small-caps;
+			-webkit-transition:ease-in all 100ms;
+			transition:ease-in all 100ms;
+			
+			&:hover {
+				background-color: darken($green, 5%);
+			}
+		}
+
+		.button--red {
+			background-color: $red1;
+			
+			&:hover {
+				background-color: darken($red1, 5%);
+			}
+		}
+	}
+
+	.error-form {
+
+		ul {
+			@extend .group;
+			margin-bottom: 10px;
+			li {	
+				float: right;
+				padding: 5px;
+				margin: 3px;
+				@include font-size(15);
+				@include border-radius(3px);
+				color: #A94442;;
+				background-color: #f2dede;
+				border: 1px solid #ebccd1;
+			}
+		}
+	}
+
+	.form-links {
+		@extend .group;
+		margin-top: 5px;
+		
+		ul {	
+			@extend .group;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			
+			li {
+				list-style-type: none;
+				display: inline;
+				
+				&:first-child {
+					float: left;
+				}
+
+				&:last-child {
+					float: right;
+				}
+				
+				a {
+					color: $grey6;
+					@include font-size(16);
+					font-variant: small-caps;
+					
+					&:hover {
+						text-decoration: underline;	
+					}
+				}
+			}
+		}
+	}
+
+}
+

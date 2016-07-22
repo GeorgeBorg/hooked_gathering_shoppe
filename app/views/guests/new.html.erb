@@ -1,0 +1,13 @@
+<%= provide(:title, "New Guest" ) %>
+
+<div class="outer-form">
+	<h2>new guest</h2>
+
+	<%= render 'form', guest: @guest %>
+	
+	<div class="form-links">
+		<ul>
+			<li><%= link_to 'back', root_path %></li>
+		</ul>
+	</div>
+</div>

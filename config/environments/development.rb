@@ -1,6 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV['aws_bucket'],
+    access_key_id: ENV['aws_access_key_id'],
+    secret_access_key: ENV['aws_secret_access_key'],
+    s3_region: ENV['aws_region'],
+  }
+}
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -8,6 +17,24 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 465,
+    domain: ENV['GMAIL_DOMAIN'],
+    authentication: 'plain',
+     enable_starttls_auto: true,
+    user_name: ENV['GMAIL_USERNAME'],
+    password: ENV['GMAIL_PASSWORD'],
+    tls: true,
+    }
+
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
