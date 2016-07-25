@@ -2,12 +2,10 @@ Rails.application.routes.draw do
   mount Shoppe::Engine => "/admin"
   resources :guests
 
-  get "product/:permalink", to: "products#show", as: "product"
-  post "product/:permalink", to: "products#buy", as: "buy"
+  get "shop/:permalink", to: "products#show", as: "product"
+  post "shop/:permalink", to: "products#buy", as: "buy"
 
-  post "product/:permalink", to: "products#buy"
-
-  get 'products', to: "products#index"
+  get 'shop', to: "products#index"
 
   get "basket", to: "orders#show"
 
