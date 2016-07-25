@@ -1,0 +1,76 @@
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Table
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@include bem-block(table) {
+	padding: 60px 0;
+	text-align: left;
+	width: 100%;
+	@extend .group;
+    
+    @include bem-element(row) {
+	    border-bottom: 1px #e0e0e0 solid;
+	    padding-bottom: 30px;
+	    margin-bottom: 30px;
+	}
+
+	@include bem-element(cell) {
+		text-align: left;
+		font-family: 'Permanent Marker', cursive;
+		@include font-size(20);
+		padding: 2%;
+		vertical-align: top;
+		
+		@include breakpoint(medium) {
+			@include font-size(20);
+		}
+	}
+
+	@include bem-element(image) {
+		width: 20%;
+		float: left;
+		margin: 0 5%;
+	}
+
+	@include bem-element(text) {
+		@include font-size(16);
+		color: $grey8;
+		margin: 0;
+		
+		@include breakpoint(medium) {
+			@include font-size(16);
+		}
+	}
+
+	@include bem-element(text, large) {
+		@include font-size(20);
+		color: $grey2;
+		margin: 0;
+		
+		@include breakpoint(medium) {
+			@include font-size(20);
+		}
+	}
+
+	@include bem-element(text, right) {
+		text-align: right;
+	}
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Buttons
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@include bem-block(button) {
+	padding: 1% 2%;
+	text-align: center;
+	color: white;
+	background-color: $grey8;
+	border-radius: 4%;
+	@include font-size(14);
+	margin-left: 1%;
+	
+	&:hover {
+      background-color: $grey5;
+   }
+};

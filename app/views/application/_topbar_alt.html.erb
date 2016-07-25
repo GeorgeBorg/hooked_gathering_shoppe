@@ -14,10 +14,16 @@
 		<li class="nav__listItem"><%= link_to 'tickets!', tickets_path, class: 'nav__link' %></li>
 	</ul>
 
-	<%# if user_signed_in? %>
-		<ul class="nav">
-			<li class="nav__listItem"><%#= link_to('logout', destroy_user_session_path, class: 'nav__link', :method => :delete) %> </li>
-		</ul>
-	<%# end %>
+	<ul class="nav nav--right">
+		<% if current_order %>
+			<li class="nav__listItem">
+				<%= link_to basket_path,  class: 'nav__link' do %>
+					<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+					<%= current_order.total_items%> /
+				  <%= number_to_currency current_order.total_before_tax %>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
 
 </div>

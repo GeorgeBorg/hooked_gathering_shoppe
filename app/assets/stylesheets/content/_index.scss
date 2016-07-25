@@ -154,6 +154,10 @@
 	}
 }
 
+@include bem-block(container, right) {
+	text-align: right;
+}
+
 @include bem-block(container, zoom, hover) {
 	-webkit-transform: scale(1.03, 1.03);
 	transform: scale(1.03, 1.03);
