@@ -1,4 +1,19 @@
-<h2>Your basket</h2>
-<%= render 'items', :order => current_order %>
-<p><%= link_to 'Empty basket', basket_path, :method => :delete %></p>
-<%= link_to "Checkout", checkout_path %>
+<div class="section">
+
+	<div class="content-wrapper">
+
+		<h2 class="section__header">Your basket</h2>
+
+		<%= render 'items', :order => current_order %>
+		
+		<div class="container container--right">
+
+			<%= link_to 'EMPTY BASKET', basket_path, :method => :delete, class: "button" %>
+
+			<%= link_to "CHECKOUT", checkout_path, class: "button" %>
+
+		</div>
+		
+	</div>
+
+</div>

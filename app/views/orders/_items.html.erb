@@ -1,47 +1,68 @@
-<table width='100%' border='1'>
+<table class="table">
   <thead>
-    <tr>
-      <td>Quantity</td>
-      <td>Product</td>
-      <td>Sub-Total</td>
-      <td>Tax</td>
-      <td>Total</td>
+    <tr class="table__row">
+      <td class="table__cell">Item</td>
+      <td class="table__cell">Price</td>
+      <td class="table__cell">Quantity</td>
+      <td class="table__cell">Total</td>
     </tr>
   </thead>
   <tbody>
     <% order.order_items.each do |item| %>
-    <tr>
-      <td><%= item.quantity %></td>
-      <td><%= item.ordered_item.full_name %></td>
-      <td><%= number_to_currency item.sub_total %></td>
-      <td><%= number_to_currency item.tax_amount %></td>
-      <td><%= number_to_currency item.total %></td>
-    </tr>
-    <% end %>
+      <tr class="table__row">
 
+        <td class="table__cell">
+
+          <%= link_to product_path(item.ordered_item.permalink)do %>
+
+            <% if item.ordered_item.default_image %>
+              <%= image_tag item.ordered_item.default_image.path, class: "table__image" %>
+            <% end %>
+
+            <p class="table__text table__text--large">      
+              <%= item.ordered_item.full_name %>    
+            </p>
+            
+            <p class="table__text"><%= item.ordered_item.description %></p>
+
+          <% end %>
+
+        </td>
+
+        <td class="table__cell">
+          <p class="table__text"><%= number_to_currency item.sub_total %></p>  
+        </td>
+        <td class="table__cell">
+          <p class="table__text"><%= item.quantity %></p>
+        </td>
+        <td class="table__cell">
+          <p class="table__text"><%= number_to_currency item.total %></p>
+        </td>
+      </tr>
+    <% end %>
+<!-- 
     <% if order.delivery_service %>
     <tr>
       <td></td>
       <td><%= order.delivery_service.name %></td>
       <td><%= number_to_currency order.delivery_price %></td>
-      <td><%= number_to_currency order.delivery_tax_amount %></td>
       <td><%= number_to_currency order.delivery_price + order.delivery_tax_amount %></td>
     </tr>
-    <% end %>
+    <% end %> -->
 
   </tbody>
   <tfoot>
     <tr>
-      <td colspan='4'>Sub-Total</td>
-      <td><%= number_to_currency order.total_before_tax %></td>
-    </tr>
-    <tr>
-      <td colspan='4'>Tax</td>
-      <td><%= number_to_currency order.tax %></td>
-    </tr>
-    <tr>
-      <td colspan='4'>Total</td>
-      <td><%= number_to_currency order.total %></td>
+      <td class="table__cell" colspan='3'>
+        <p class="table__text table__text--large table__text--right">
+          Sub-total
+        </p>
+      </td>
+      <td class="table__cell">
+        <p class="table__text table__text--large">
+          <%= number_to_currency order.total %>
+        </p>
+      </td>
     </tr>
   </tfoot>
 </table>
