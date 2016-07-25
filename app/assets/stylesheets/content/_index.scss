@@ -47,6 +47,8 @@
 
 	@include bem-element(header) {
 		color:$black;
+		margin-left:20px;
+		margin-right: 20px;
 		@include font-size(22);
 	}
 
@@ -61,13 +63,20 @@
 	@include bem-element(text) {
 		color: $black;
 		@include font-size(14);
-		line-height: 22px;
-		text-align: center;
-		margin: 0;
+		line-height: 25px;
+		margin: 0 20px;
 	}
 
 	@include bem-element(text, white) {
 		color: $white;
+	}
+
+	@include bem-element(text, large) {
+		@include font-size(22);
+	}
+
+	@include bem-element(text, margin-bottom) {
+		margin-bottom: 50px;
 	}
 
 	@include bem-element(iframe) {
@@ -85,12 +94,7 @@
 	}
 	
 	@include bem-element(image) {
-		width: 200px;
-	}
-
-	@include bem-element(image, height) {
-		height:200px;
-		width: auto;
+		width: 100%;
 	}
 
 	@include bem-element(button-wrapper) {
@@ -130,8 +134,22 @@
 	}
 }
 
+@include bem-block(container, two-third) {
+	width: 100%;
+	
+	@include breakpoint(small) {
+		width: 50%;
+	}
+
+	@include breakpoint(medium) {
+		width: 67%;
+	}
+}
+
 @include bem-block(container, quarter) {
 	width: 100%;
+	-webkit-transition: ease-in all 200ms;
+	
 	
 	@include breakpoint(small) {
 		width: 50%;
@@ -143,6 +161,11 @@
 
 @include bem-block(container, right) {
 	text-align: right;
+}
+
+@include bem-block(container, zoom, hover) {
+	-webkit-transform: scale(1.03, 1.03);
+	transform: scale(1.03, 1.03);
 }
 
 

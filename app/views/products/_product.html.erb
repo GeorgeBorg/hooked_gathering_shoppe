@@ -1,16 +1,17 @@
 <% product.each do |category, products| %>
 
     <% products.each do |product| %>
-	<div class="container container--quarter">
-		<%= link_to product_path(product.permalink)do %>
+	<div class="container container--quarter container--zoom">
+		<%= link_to product_path(product.permalink) do %>
 
 			<% if product.default_image %>
-				<%= image_tag product.default_image.path, class: "container__image container__image--height" %>
+				<%= image_tag product.default_image.path, class: "container__image" %>
 			<% end %>
 
 			<h3 class="container__header container__header--font"><%= product.name %></h3>
-			<p class="container__text"><%= product.description %></p>
-			<p class="container__text"><b><%= number_to_currency product.price %></b></p>  		
+			<p class="container__text"><%= product.short_description %></p>
+			<p class="container__text"><b><%= number_to_currency product.price %></b></p> 
+
      		<% end %>
 	</div>
 
