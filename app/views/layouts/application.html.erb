@@ -33,8 +33,14 @@
 	</head>
 
 	<body id="home">
-		<script src="//lightwidget.com/widgets/lightwidget.js" type="text/javascript"></script>
-	
+		
+		<% if current_page?(controller: 'welcome', action: 'home') %>
+			<%= render 'topbar' %>
+		<% else %>
+			<%= render 'topbar_alt' %>
+		<% end %>
+
+
 		<%= yield %>
 		<%= render 'footer' %>
 	</body>

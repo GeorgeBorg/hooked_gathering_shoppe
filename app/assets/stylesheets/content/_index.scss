@@ -11,6 +11,7 @@
 		text-align: center;
 		font-family: 'Permanent Marker', cursive;
 		@include font-size(40);
+		margin-top: 10px;
 		font-weight:800;
 		
 		@include breakpoint(medium) {
@@ -22,18 +23,12 @@
 		color: $white;
 	}
 
-	@include bem-element(header, n-mt) {
-		margin-top: 0;
-	}
 }
 
 @include bem-block(section, black) {
 	background-color: $black;
 }
 
-@include bem-block(section, no-padding) {
-	padding: 0;
-}
 
 
 
@@ -67,7 +62,8 @@
 		color: $black;
 		@include font-size(14);
 		line-height: 22px;
-		text-align: justify;
+		text-align: center;
+		margin: 0;
 	}
 
 	@include bem-element(text, white) {
@@ -89,13 +85,12 @@
 	}
 	
 	@include bem-element(image) {
-		width: 80%;
+		width: 200px;
 	}
 
-	@include bem-element(image, small) {
-		width: 30%;
-		margin: 5px 1.666666%;
-		float: left;
+	@include bem-element(image, height) {
+		height:200px;
+		width: auto;
 	}
 
 	@include bem-element(button-wrapper) {
@@ -114,9 +109,6 @@
 			color:$yellow1;
 		}
 	}
-}
-@include bem-block(container, no-float) {
-	float:none;
 }
 
 @include bem-block(container, half) {
@@ -138,6 +130,16 @@
 	}
 }
 
+@include bem-block(container, quarter) {
+	width: 100%;
+	
+	@include breakpoint(small) {
+		width: 50%;
+	}
+	@include breakpoint(medium) {
+		width: 25%;
+	}
+}
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -161,28 +163,4 @@
 		}
 	}
 	
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------
-   Tickets
------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-
-@include bem-block(section) {
-
-	@include bem-element(page-header) {
-		font-family: 'Permanent Marker', cursive;
-		@include font-size(40);
-		color: $white;
-		font-weight:800;
-		float: left;
-		margin-top: 5px;
-	}
-
-	@include bem-element(tickets-icon) {
-		font-size: 30px;
-		margin: 20px;
-		color: $white;
-		float: left;
-	}
 }

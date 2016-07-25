@@ -21,6 +21,25 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  helper_method :current_order, :has_order?
 
+  def login_required
+      redirect_to root_path unless logged_in?
+    end
+
+    def logged_in?
+      current_user.is_a?(Shoppe::User)
+    end
+
+    def current_user
+      @current_user ||= login_from_session || :false
+    end
+
+    def login_from_session
+      if session[:shoppe_user_id]
+        @user = Shoppe::User.find_by_id(session[:shoppe_user_id])
+      end
+    end
+
+
+  helper_method :current_order, :has_order?, :logged_in?
 end

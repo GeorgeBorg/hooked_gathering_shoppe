@@ -3,10 +3,10 @@
 	<i class="topbar__menu fa fa-hand-peace-o"></i>
 
 	<ul class="nav">	
-		<li class="nav__listItem"><p class="nav__link home-link" >home</p></li>
-		<li class="nav__listItem"><p class="nav__link news-link" >news</p></li>
-		<li class="nav__listItem"><p class="nav__link lineup-link" >line-up</p></li>
-		<li class="nav__listItem"><p class="nav__link info-link" >info</p></li>
+		<li class="nav__listItem"><%= link_to "home", root_path, class: "nav__link" %></li>
+		<li class="nav__listItem"><%= link_to "news", root_path(anchor: "news"), class: "nav__link" %></li>
+		<li class="nav__listItem"><%= link_to "line-up", root_path(anchor: "line-up"), class: "nav__link" %></li>
+		<li class="nav__listItem"><%= link_to "info", root_path(anchor: "info"), class: "nav__link" %></li>
 		<li class="nav__listItem"><%= link_to "shop", products_path, class: "nav__link" %></li>
 	</ul>
 

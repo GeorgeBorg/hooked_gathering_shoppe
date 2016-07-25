@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Shoppe::Engine => "/shoppe"
+  mount Shoppe::Engine => "/admin"
   resources :guests
 
   get "product/:permalink", to: "products#show", as: "product"

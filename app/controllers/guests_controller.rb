@@ -1,5 +1,6 @@
 class GuestsController < ApplicationController
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
+  before_action :login_required, except: :index
 
   # GET /guests
   # GET /guests.json

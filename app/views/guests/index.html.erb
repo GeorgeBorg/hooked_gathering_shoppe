@@ -1,15 +1,10 @@
-<%= link_to root_path do %>
-	<div class="section section--no-padding section--black">
-		<i class="fa fa-hand-o-left section__tickets-icon"></i>
-		<h2 class="section__page-header">Hooked</h2>
-	</div>
-<% end %>
+<%= render 'topbar_alt' %>
 
-<div class="section section--black section--no-padding">
+<div class="section section--black">
 
 	<div class="content-wrapper">
 
-		<h2 class="section__header section__header--white section__header--n-mt">The Line-up</h2>
+		<h2 class="section__header section__header--white">The Line-up</h2>
 
 		<%= render @guests %> 
 			
