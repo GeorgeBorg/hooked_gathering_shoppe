@@ -1,30 +1,49 @@
 <div class="section">
 
     <div class="content-wrapper">
-        <h2 class="section__header">Checkout</h2>
+        
+        <h2 class="section__header">Your basket</h2>
         
         <%= render 'items', :order => @order %>
         
-        <div class="outer-form">
+        <h2 class="container__header">Shipping Details</h2>
+
+        <div class="form form--two-third">
             <%= form_for @order, :url => checkout_path do |f| %>
-              <dl>
 
-                <dd><%= f.text_field :first_name, placeholder: "First Name" %> <%= f.text_field :last_name, placeholder: "Last Name" %></dd>
+                <dd class="form__input-half">
+                    <%= f.text_field :first_name, placeholder: "First Name", class: "form__text-input" %> 
+                </dd>
+                <dd class="form__input-half right"> 
+                    <%= f.text_field :last_name, placeholder: "Last Name", class: "form__text-input" %>
+                </dd>
+                
                 <br><br>
-                <dd><%= f.text_field :billing_address1, placeholder: "House Number" %></dd>
-                <dd><%= f.text_field :billing_address2, placeholder: "Street" %></dd>
-                <dd><%= f.text_field :billing_address3, placeholder: "City/Town" %></dd>
-                <dd><%= f.text_field :billing_address4, placeholder: "Country" %></dd>
 
-                <dd><%= f.text_field :billing_postcode, placeholder: "Post Code" %></dd>
-                <dd><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, :include_blank => true, placeholder: "Country" %></dd>
+                <dd class="form__input">
+                    <%= f.text_field :billing_address1, placeholder: "House Number", class: "form__text-input", class: "form__text-input" %>
+                </dd>
+
+                <dd class="form__input">
+                    <%= f.text_field :billing_address2, placeholder: "Street", class: "form__text-input" %>
+                </dd>
+
+                <dd class="form__input"><%= f.text_field :billing_address3, placeholder: "City/Town", class: "form__text-input" %></dd>
+
+                <dd class="form__input"><%= f.text_field :billing_address4, placeholder: "Country", class: "form__text-input" %></dd>
+
+                <dd class="form__input"><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, {prompt: "Select a country"}, {class: "form__dropdown"} %></dd>
+
+                <dd class="form__input"><%= f.text_field :billing_postcode, placeholder: "Post Code", class: "form__text-input" %></dd>
+
                 <br><br>
-                <dd><%= f.text_field :email_address, placeholder: "E-mail" %></dd>
 
-                <dd><%= f.text_field :phone_number, placeholder: 'Phone Number' %></dd>
+                <dd class="form__input-half"><%= f.text_field :email_address, placeholder: "E-mail", class: "form__text-input" %></dd>
 
-                <dd><%= f.submit 'Continue' %></dd>
-              </dl>
+                <dd class="form__input-half right"><%= f.text_field :phone_number, placeholder: 'Phone Number', class: "form__text-input" %></dd>
+
+                <dd><%= f.submit 'Continue', class: "button" %></dd>
+
             <% end %>
         </div>
     
