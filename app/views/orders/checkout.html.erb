@@ -41,8 +41,14 @@
                 <dd class="form__input-half"><%= f.text_field :email_address, placeholder: "E-mail", class: "form__text-input" %></dd>
 
                 <dd class="form__input-half right"><%= f.text_field :phone_number, placeholder: 'Phone Number', class: "form__text-input" %></dd>
-
-                <dd><%= f.submit 'Continue', class: "button" %></dd>
+                
+                <div class="container container--half">
+                    <%= f.submit 'Continue', class: "button" %>
+                </div>
+                    
+                <div class="container container--half">
+                    <%= link_to 'cancel', basket_path, class: "button cancel-button" %>
+                </div>
 
             <% end %>
         </div>
