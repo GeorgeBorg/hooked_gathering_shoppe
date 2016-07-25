@@ -9,7 +9,7 @@
 	@extend .group;
     
     @include bem-element(row) {
-	    border-bottom: 1px #e0e0e0 solid;
+	    border-bottom: 1px solid $greyD;
 	    padding-bottom: 30px;
 	    margin-bottom: 30px;
 	}
@@ -17,7 +17,7 @@
 	@include bem-element(cell) {
 		text-align: left;
 		@include font-size(20);
-		padding: 2%;
+		padding: 10px;
 		vertical-align: top;
 		
 		@include breakpoint(medium) {
@@ -28,7 +28,7 @@
 	@include bem-element(image) {
 		width: 20%;
 		float: left;
-		margin: 0 5%;
+		margin: 0 10px;
 	}
 
 	@include bem-element(text) {
@@ -50,6 +50,7 @@
 			@include font-size(20);
 		}
 	}
+<<<<<<< HEAD
 
 	@include bem-element(text, right) {
 		text-align: right;
@@ -138,4 +139,5 @@
 		width: 67%;
 	    margin: 0 16.5%
 	}
+
 }
