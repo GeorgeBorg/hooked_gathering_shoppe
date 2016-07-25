@@ -22,7 +22,6 @@
 	@include bem-element(header, white) {
 		color: $white;
 	}
-
 }
 
 @include bem-block(section, black) {
@@ -54,10 +53,6 @@
 
 	@include bem-element(header, white) {
 		color:$white;
-	}
-
-	@include bem-element(header, font) {
-		font-family: 'Permanent Marker', cursive;
 	}
 
 	@include bem-element(text) {

@@ -1,6 +1,6 @@
 <div class="container container--third">
 	<%= image_tag(guest.picture.url(:square), class: "container__image") %>
-	<h3 class="container__header container__header--white container__header--font"><%= guest.name %></h3>
+	<h3 class="container__header container__header--white"><%= guest.name %></h3>
 	<div class="container__text container__text--white"><%= guest.bio %></div>
 	<% if logged_in?  %>
 		<div class="container__button-wrapper">
