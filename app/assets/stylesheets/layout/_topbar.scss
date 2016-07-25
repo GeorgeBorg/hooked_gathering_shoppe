@@ -5,9 +5,9 @@
 	width: 100%;
 	background: $white;
 	z-index: 5;
-	font-family: 'Permanent Marker', cursive;
 	position: fixed;
 	top: 0;
+	text-transform: uppercase;
 	text-align: center;
 	height: 60px;
 	color:$black;
@@ -57,8 +57,8 @@
 			margin: 0;
 			padding: 5px 0;
 			margin: 5px 0;
-			font-weight: 400;
-			@include font-size(25);
+			font-weight: 700;
+			@include font-size(16);
 			
 			@include breakpoint(small-medium) {
 				color:$black;
