@@ -30,9 +30,9 @@
 
                 <dd class="form__input"><%= f.text_field :billing_address3, placeholder: "City/Town", class: "form__text-input" %></dd>
 
-                <dd class="form__input"><%= f.text_field :billing_address4, placeholder: "Country", class: "form__text-input" %></dd>
+                <!-- <dd class="form__input"><%#= f.text_field :billing_address4, placeholder: "Country", class: "form__text-input" %></dd> -->
 
-                <dd class="form__input"><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, {prompt: "Select a country"}, {class: "form__dropdown"} %></dd>
+                <dd class="form__input"><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, {prompt: "Select a country"}, {class: "form__dropdown form__text-input"} %></dd>
 
                 <dd class="form__input"><%= f.text_field :billing_postcode, placeholder: "Post Code", class: "form__text-input" %></dd>
 
@@ -43,13 +43,13 @@
                 <dd class="form__input-half right"><%= f.text_field :phone_number, placeholder: 'Phone Number', class: "form__text-input" %></dd>
                 
                 <div class="container container--half">
-                    <%= f.submit 'Continue', class: "button" %>
-                </div>
-                    
-                <div class="container container--half">
                     <%= link_to 'cancel', basket_path, class: "button cancel-button" %>
                 </div>
 
+                <div class="container container--half">
+                    <%= f.submit 'Continue', type: 'submit', class: "button", data: { disable_with: 'Submitting' } %>
+                </div>
+            
             <% end %>
         </div>
     
