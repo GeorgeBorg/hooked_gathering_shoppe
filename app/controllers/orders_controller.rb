@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
 			}
 		})
 
-		current_order.notes = payment.id
+		current_order.mollie_id = payment.id
 
 		current_order.save
 
@@ -57,19 +57,13 @@ class OrdersController < ApplicationController
 		mollie = Mollie::API::Client.new
 		mollie.setApiKey 'test_kBn4UATMKjcRD4VGEQPsz5UVuyQ6bA'
 
-		@order = Shoppe::Order.find(current_order.id)
-
-	 	payment = mollie.payments.get(current_order.notes)
+	 	payment = mollie.payments.get(current_order.mollie_id)
 
 		if payment.paid?
 	  		puts 'Payment received.'
 	  		current_order.amount_paid = current_order.total
 	  		current_order.save
 	  		current_order.confirm!
-
-	  		puts current_order.inspect
-
-	  		# current_order.destroy
 	  		session[:order_id] = nil
 	  		redirect_to root_path, :notice => "Order has been placed successfully!"
 		else
