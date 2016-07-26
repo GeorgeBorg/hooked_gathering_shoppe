@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722113719) do
+ActiveRecord::Schema.define(version: 20160726142229) do
 
   create_table "guests", force: :cascade do |t|
     t.string   "name",                 limit: 255
@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(version: 20160722113719) do
     t.boolean  "exported",                                                        default: false
     t.string   "invoice_number",            limit: 255
     t.integer  "customer_id",               limit: 4
+    t.string   "mollie_id",                 limit: 255
   end
 
   add_index "shoppe_orders", ["delivery_service_id"], name: "index_shoppe_orders_on_delivery_service_id", using: :btree

@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
 		mollie = Mollie::API::Client.new
 		mollie.setApiKey 'test_kBn4UATMKjcRD4VGEQPsz5UVuyQ6bA'
 
-	 	payment = mollie.payments.get(@pay_id)
+	 	payment = mollie.payments.get(pay_id)
 
 		if payment.paid?
 	  		puts 'Payment received.'
