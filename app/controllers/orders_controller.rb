@@ -15,7 +15,6 @@ class OrdersController < ApplicationController
 		      redirect_to checkout_confirmation_path
 		    end
 	  	end
-	  	puts current_order.order_items.first.ordered_item.inspect
 	end
 
 	def confirmation
@@ -41,6 +40,8 @@ class OrdersController < ApplicationController
 			}
 		})
 
+		# current_order.confirm! #testing orders in admin are correct
+		
 		redirect_to payment.getPaymentUrl
 
 	end
