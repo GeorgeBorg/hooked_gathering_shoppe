@@ -1,6 +1,6 @@
 GIT
-  remote: git@github.com:JClackett/shoppe.git
-  revision: 9394c3a478e31d652e66466c0b7e2e0e893eb36d
+  remote: https://github.com/JClackett/shoppe.git
+  revision: 4e4e922d95f041e859c4627d7937642f7fdff8fc
   specs:
     shoppe (1.1.2)
       awesome_nested_set (~> 3.0.2)

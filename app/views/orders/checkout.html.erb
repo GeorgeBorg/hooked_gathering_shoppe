@@ -32,7 +32,7 @@
 
                 <!-- <dd class="form__input"><%#= f.text_field :billing_address4, placeholder: "Country", class: "form__text-input" %></dd> -->
 
-                <dd class="form__input"><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, {prompt: "Select a country"}, {class: "form__dropdown form__text-input"} %></dd>
+                <dd class="form__input"><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, {prompt: "Select a country"}, {class: "form__dropdown form__text-input dropdown"} %></dd>
 
                 <dd class="form__input"><%= f.text_field :billing_postcode, placeholder: "Post Code", class: "form__text-input" %></dd>
 

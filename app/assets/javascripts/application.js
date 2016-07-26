@@ -150,3 +150,31 @@ function scaleBannerVideoSize(element){
 
     });
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Update delivery cost on dropdown
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+// $(document).ready(function(){
+//     $('.dropdown').on('change', function() {
+//         $.ajax({
+//           type: "POST",
+//           url: "/checkout",
+//           data: { current_order: {} },
+//           success:(data) ->
+//             alert data.id
+//             return false
+//           error:(data) ->
+//             return false
+//         })
+//     });    
+// }); 
+
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
 	def confirmation
 
 		@order = Shoppe::Order.find(current_order.id)
+
 		mollie = Mollie::API::Client.new
 		mollie.setApiKey 'test_kBn4UATMKjcRD4VGEQPsz5UVuyQ6bA'
 
@@ -42,6 +43,10 @@ class OrdersController < ApplicationController
 			}
 		})
 
+		current_order.notes = payment.id
+
+		current_order.save
+
 		# current_order.confirm! #testing orders in admin are correct
 		
 		redirect_to payment.getPaymentUrl
@@ -52,13 +57,21 @@ class OrdersController < ApplicationController
 		mollie = Mollie::API::Client.new
 		mollie.setApiKey 'test_kBn4UATMKjcRD4VGEQPsz5UVuyQ6bA'
 
-	 	payment = mollie.payments.get(@pay_id)
+		@order = Shoppe::Order.find(current_order.id)
+
+	 	payment = mollie.payments.get(current_order.notes)
 
 		if payment.paid?
 	  		puts 'Payment received.'
-	  		current_order.destroy
+	  		current_order.amount_paid = current_order.total
+	  		current_order.save
+	  		current_order.confirm!
+
+	  		puts current_order.inspect
+
+	  		# current_order.destroy
 	  		session[:order_id] = nil
-	  		redirect_to root_path
+	  		redirect_to root_path, :notice => "Order has been placed successfully!"
 		else
 			puts 'Payment Cancelled'
 			redirect_to checkout_path
