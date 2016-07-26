@@ -159,3 +159,5 @@ function scaleBannerVideoSize(element){
 $(document).on('ready page:load', function () {
   $("#flash-notice").delay(1500).fadeOut(600);
 });
+
+

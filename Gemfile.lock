@@ -1,5 +1,6 @@
-PATH
-  remote: ../gems/shoppe
+GIT
+  remote: https://github.com/JClackett/shoppe.git
+  revision: f95239753248c4d47d79ffead49bed72b4f9a9e0
   specs:
     shoppe (1.1.2)
       awesome_nested_set (~> 3.0.2)
