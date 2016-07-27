@@ -17,6 +17,8 @@
 			<p class="container__text align-left container__text--margin-bottom"><%= @product.description %></p>
 			<p class="container__text container__text--large"><%= number_to_currency @product.price %></p>
 
+			<div class="container"><%#= collection_select(@product, :product_attributes, @attributes, :id, :value) %></div>
+
 			<div class="container container--half">
 				<%= link_to product_path(@product.permalink), :method => :post, class: "button" do %>
 					<i class="fa fa-shopping-basket" aria-hidden="true"></i>

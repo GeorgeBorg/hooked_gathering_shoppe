@@ -33,6 +33,8 @@
 	</head>
 
 	<body id="home">
+
+		<%= render '/shared/flash_messages' %>
 		
 		<% if current_page?(controller: 'welcome', action: 'home') %>
 			<%= render 'topbar' %>
