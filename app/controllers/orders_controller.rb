@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 	def destroy
 		current_order.destroy
 		session[:order_id] = nil
-		redirect_to root_path, :notice => "Basket emptied successfully."
+		redirect_to root_path, :notice => "Basket emptied!"
 	end
 
 
@@ -59,14 +59,12 @@ class OrdersController < ApplicationController
 	 	payment = mollie.payments.get(current_order.mollie_id)
 
 		if payment.paid?
-	  		puts 'Payment received.'
 	  		current_order.amount_paid = current_order.total
 	  		current_order.save
 	  		current_order.confirm!
 	  		session[:order_id] = nil
-	  		redirect_to root_path, :notice => "Order has been placed successfully!"
+	  		redirect_to root_path, :notice => "Order has been placed!"
 		else
-			puts 'Payment Cancelled'
 			redirect_to checkout_path
 		end
 
