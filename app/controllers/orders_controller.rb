@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
 			:description => @order.full_name,
 			:redirectUrl => redirectURL,
 			:mode => 'test',
+			:webhookUrl => 'http://000ec1d7.ngrok.io',
 			:metadata    => {
 				:order_id =>  order_id,
 			}
@@ -46,8 +47,6 @@ class OrdersController < ApplicationController
 		current_order.mollie_id = payment.id
 
 		current_order.save
-
-		# current_order.confirm! #testing orders in admin are correct
 		
 		redirect_to payment.getPaymentUrl
 
