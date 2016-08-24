@@ -21,13 +21,13 @@ class Guest < ActiveRecord::Base
 # Associations
 # ------------------------------------------------------------------------------
 
-  has_attached_file :picture, styles: {square: "400x400#"}
+  has_attached_file :picture, styles: {square: "600x600#"}
 
 # ------------------------------------------------------------------------------
 # Validations
 # ------------------------------------------------------------------------------
 
-validates_presence_of :name, :bio
+validates_presence_of :name
 
 # Validate content type
 validates_attachment_content_type :picture, content_type: /\Aimage/

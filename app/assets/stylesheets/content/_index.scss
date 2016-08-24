@@ -90,6 +90,10 @@
 	
 	@include bem-element(image) {
 		width: 100%;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
 	}
 
 	@include bem-element(button-wrapper) {
@@ -116,6 +120,10 @@
 	@include breakpoint(medium) {
 		width: 50%;
 	}
+}
+
+@include bem-block(container, stay-half) {
+	width: 50%;
 }
 
 @include bem-block(container, third) {
@@ -158,9 +166,13 @@
 	text-align: right;
 }
 
-@include bem-block(container, zoom, hover) {
-	-webkit-transform: scale(1.03, 1.03);
-	transform: scale(1.03, 1.03);
+@include bem-block(container, zoom) {
+		&:hover img {
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+		-webkit-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
+	}
 }
 
 
@@ -215,11 +227,28 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
-   Shoppee
+   Accordion
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+	    
+@include bem-block(accordion) {
+	width: 100%;
+	margin: 0 auto;
+	
+	@include breakpoint(small) {
+		width: 80%;
+	}
 
-.sidebar {
-	.logo {
-		background:image-url('images/hooked-logo-cropped.png') #9AC835 no-repeat 22px 25px;
-	}	
+	@include breakpoint(medium) {
+		width: 60%;
+	}
+	
+	@include bem-element(header) {
+		color: $red1;
+		cursor: pointer;
+		outline:none;
+	}
+
+	@include bem-element(header, $pseudo-class: "hover") {
+		text-decoration: underline;
+	}
 }

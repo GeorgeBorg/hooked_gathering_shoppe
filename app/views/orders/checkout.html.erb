@@ -10,6 +10,17 @@
 
         <div class="form form--two-third">
             <%= form_for @order, :url => checkout_path do |f| %>
+                        
+                    <% if @order.errors.any? %>
+
+                        <div id="error_explanation" class="error-form">
+                            <ul>
+                            <% @order.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                            <% end %>
+                            </ul>
+                    </div>
+                    <% end %>
 
                 <dd class="form__input-half">
                     <%= f.text_field :first_name, placeholder: "First Name", class: "form__text-input" %> 
@@ -42,11 +53,11 @@
 
                 <dd class="form__input-half right"><%= f.text_field :phone_number, placeholder: 'Phone Number', class: "form__text-input" %></dd>
                 
-                <div class="container container--half">
+                <div class="container container--stay-half">
                     <%= link_to 'cancel', basket_path, class: "button cancel-button" %>
                 </div>
 
-                <div class="container container--half">
+                <div class="container container--stay-half">
                     <%= f.submit 'Continue', type: 'submit', class: "button", data: { disable_with: 'Submitting' } %>
                 </div>
             

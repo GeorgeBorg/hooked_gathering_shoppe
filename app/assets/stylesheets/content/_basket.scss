@@ -27,8 +27,13 @@
 
 	@include bem-element(image) {
 		width: 20%;
+		display: none;
 		float: left;
 		margin: 0 10px;
+		
+		@include breakpoint(small) {
+			display:block;
+		}
 	}
 
 	@include bem-element(text) {
@@ -69,6 +74,24 @@
 	float: left;
 	width: 100%;
 	padding: 0;
+	
+	.error-form {
+
+		ul {
+			@extend .group;
+			margin-bottom: 10px;
+			li {	
+				float: right;
+				padding: 5px;
+				margin: 3px;
+				@include font-size(15);
+				@include border-radius(3px);
+				color: #A94442;;
+				background-color: #f2dede;
+				border: 1px solid #ebccd1;
+			}
+		}
+	}
 	
 	@include bem-element(input) {
 		float: left;

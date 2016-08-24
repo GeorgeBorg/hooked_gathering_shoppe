@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/JClackett/shoppe.git
-  revision: f95239753248c4d47d79ffead49bed72b4f9a9e0
+  revision: 6be9350859974eea4059e7027d2e32f8f9bc6b5f
   specs:
     shoppe (1.1.2)
       awesome_nested_set (~> 3.0.2)
@@ -63,12 +63,12 @@ GEM
     arel (6.0.3)
     awesome_nested_set (3.0.3)
       activerecord (>= 4.0.0, < 5)
-    aws-sdk (2.4.2)
-      aws-sdk-resources (= 2.4.2)
-    aws-sdk-core (2.4.2)
+    aws-sdk (2.4.4)
+      aws-sdk-resources (= 2.4.4)
+    aws-sdk-core (2.4.4)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.4.2)
-      aws-sdk-core (= 2.4.2)
+    aws-sdk-resources (2.4.4)
+      aws-sdk-core (= 2.4.4)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -209,7 +209,7 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
-    globalid (0.3.6)
+    globalid (0.3.7)
       activesupport (>= 4.1.0)
     globalize (5.0.1)
       activemodel (>= 4.2.0, < 4.3)
@@ -338,7 +338,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
