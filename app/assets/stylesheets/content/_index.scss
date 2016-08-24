@@ -249,18 +249,20 @@
 	@include breakpoint(small) {
 		width: 80%;
 	}
-
-	@include breakpoint(medium) {
-		width: 60%;
-	}
 	
 	@include bem-element(header) {
-		color: $red1;
+		color: $black;
+		@include font-size(30);
 		cursor: pointer;
+		font-family: 'Permanent Marker', cursive;
 		outline:none;
 	}
 
 	@include bem-element(header, $pseudo-class: "hover") {
-		text-decoration: underline;
+		color: $red1;
+	}
+
+	@include bem-element(text) {
+		@include font-size(16);
 	}
 }

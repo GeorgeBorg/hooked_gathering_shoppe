@@ -62,7 +62,7 @@ Form Layout Template
 
 		.form-label {
 			@include font-size(14);
-			color: $grey8;
+			color: $greyB;
 		}
 	
 	}
@@ -73,7 +73,13 @@ Form Layout Template
 		background-clip: padding-box;
 		border: 1px solid #CCC;
 		padding: 10px;
+		
+		.form-image {
+			float: right;
+			width: 100px;
+		}
 	}
+
 
 	.actions {
 		@extend .group;

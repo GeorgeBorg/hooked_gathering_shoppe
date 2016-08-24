@@ -20,6 +20,7 @@
 
 	<div class="field file-field">
     		<%= f.label :picture, "Picture", class: 'form-label' %>
+		<%= image_tag(guest.picture, class: "form-image") if guest.picture %>
 		<%= f.file_field :picture %>
 	</div>
 
