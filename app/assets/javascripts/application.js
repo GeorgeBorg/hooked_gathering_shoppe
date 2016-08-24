@@ -159,8 +159,14 @@ function scaleBannerVideoSize(element){
 $(document).on('ready page:load', function () {
   $("#flash-notice").delay(1500).fadeOut(600);
   $(".flash").delay(1500).fadeOut(600);
-
 });
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+// particlesJS.load('particles-js', '/particles.json', function() {
+//   console.log('callback - particles.js config loaded');
+// });
+
+// $('#particles-js').particleground();
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
