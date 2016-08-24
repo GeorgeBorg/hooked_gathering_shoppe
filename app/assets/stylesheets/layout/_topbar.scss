@@ -3,14 +3,14 @@
 -------------------------------------------------- */
 @include bem-block(topbar) {
 	width: 100%;
-	background: $white;
+	background: $black;
 	z-index: 5;
 	position: fixed;
 	top: 0;
 	text-transform: uppercase;
 	text-align: center;
 	height: 60px;
-	color:$black;
+	color:$white;
 	@extend .group;
 	
 	@include bem-element(menu) {
@@ -61,10 +61,9 @@
 			@include font-size(16);
 			
 			@include breakpoint(small-medium) {
-				color:$black;
+				color:$white;
 				padding:0px 5px;
 				margin: 0px 5px;
-				
 			}
 			
 		}

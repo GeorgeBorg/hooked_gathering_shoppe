@@ -6,6 +6,7 @@
 	padding: 60px 0;
 	text-align: center;
 	@extend .group;
+	background-color: $white;
     
 	@include bem-element(header) {
 		text-align: center;
@@ -22,10 +23,21 @@
 	@include bem-element(header, white) {
 		color: $white;
 	}
+
+	@include bem-element(image) {
+		width: 100%;
+		opacity: 0.8;
+	}
 }
 
 @include bem-block(section, black) {
 	background-color: $black;
+}
+
+@include bem-block(section, divider) {
+	padding: 0;
+	background-color: $black;
+
 }
 
 
