@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
 			:description => @order.full_name,
 			:redirectUrl => redirectURL,
 			:mode => 'test',
+			:webhookUrl => 'http://000ec1d7.ngrok.io',
 			:metadata    => {
 				:order_id =>  order_id,
 			}
