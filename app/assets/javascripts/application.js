@@ -112,79 +112,42 @@ $(document).on('ready page:load', function () {
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
    Slider Initialize
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
-jQuery(function($) {
-    $('#sponsor-slider').sss();
-});
-
-jQuery(function($) {
-    $('#guest-slider').sss();
-});
-
-
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------
-   Cover JS
------------------------------------------------------------------------------------------------------------------------------------------------------- */
 $(document).on('ready page:load', function () {
-
-    scaleVideoContainer();
-
-    initBannerVideoSize('.video-container .poster img');
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
-
-    $(window).on('resize', function() {
-        scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .poster img');
-        scaleBannerVideoSize('.video-container .filter');
-        scaleBannerVideoSize('.video-container video');
+    $('.guest-slider').slick({
+      infinite: true,
+      slidesPerRow: 4,
+      rows: 2,
+      responsive: [
+          {
+            breakpoint: 800,
+            settings: {
+              infinite: true,
+              slidesPerRow: 3,
+              rows: 2,
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              infinite: true,
+              slidesPerRow: 2,
+              rows: 2,
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              infinite: true,
+              slidesPerRow: 1,
+              rows: 2,
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
     });
-
 });
-
-function scaleVideoContainer() {
-
-    var height = $(window).height() + 5;
-    var unitHeight = parseInt(height) + 'px';
-    $('.homepage-hero-module').css('height',unitHeight);
-    $('.homepage-hero-module').css('z-index',-1);
-
-}
-
-function initBannerVideoSize(element){
-
-    $(element).each(function(){
-        $(this).data('height', $(this).height());
-        $(this).data('width', $(this).width());
-    });
-
-    scaleBannerVideoSize(element);
-
-}
-
-function scaleBannerVideoSize(element){
-
-    var windowWidth = $(window).width(),
-    windowHeight = $(window).height() + 70,
-    videoWidth,
-    videoHeight;
-
-    $(element).each(function(){
-        var videoAspectRatio = $(this).data('height')/$(this).data('width'),
-        windowAspectRatio = windowHeight/windowWidth;
-
-        if(windowAspectRatio > 0.57){
-            $(this).height(windowHeight);
-        }
-
-        else {
-            $(this).width(windowWidth);
-        }
-
-        $(this).addClass('fadeIn animated');
-
-    });
-}
 
 
 /* --------------------------------------------------
@@ -192,17 +155,9 @@ function scaleBannerVideoSize(element){
 -------------------------------------------------- */
 
 $(document).on('ready page:load', function () {
-  $("#flash-notice").delay(1500).fadeOut(600);
-  $(".flash").delay(1500).fadeOut(600);
+    $("#flash-notice").delay(1500).fadeOut(600);
+    $(".flash").delay(1500).fadeOut(600);
 });
-
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-// particlesJS.load('particles-js', '/particles.json', function() {
-//   console.log('callback - particles.js config loaded');
-// });
-
-// $('#particles-js').particleground();
-
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
    Accordion

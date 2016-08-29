@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
 	def home
-		@guests = Guest.limit(8)
+		@guests = Guest.all
 	end
 
 	def tickets

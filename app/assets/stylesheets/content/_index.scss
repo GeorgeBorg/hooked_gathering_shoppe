@@ -51,7 +51,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 @include bem-block(container) {
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
 	margin: 0 auto;
 	position: relative;
@@ -61,13 +61,18 @@
 
 	@include bem-element(header) {
 		color:$black;
-		margin-left:20px;
-		margin-right: 20px;
+		margin-left:10px;
+		margin-right: 10px;
 		@include font-size(22);
 	}
 
 	@include bem-element(header, white) {
 		color:$white;
+	}
+
+	@include bem-element(header, small) {
+		@include font-size(16);
+		line-height: 45px;
 	}
 
 	@include bem-element(text) {

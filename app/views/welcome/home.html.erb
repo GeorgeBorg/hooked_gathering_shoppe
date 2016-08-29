@@ -38,36 +38,12 @@
 
 		<h2 class="section__header section__header--white">The Line-up</h2>
 
-		<div class="slider" id="guest-slider">
+		<div class="guest-slider">
 
-			<% @guests.each_slice(4) do |slice| -%>
-			  
-				<div class="slider__element">
-			    
-					<% slice.each do |guest| -%>
-
-						<div class="container container--quarter container--zoom">
-							<%= image_tag(guest.picture.url(:square), class: "container__image slider__image ") %>
-							<h3 class="container__header container__header--white"><%= guest.name %></h3>
-							<div class="container__text container__text--white"><%= guest.bio %></div>
-							
-							<% if logged_in?  %>
-								<div class="container__button-wrapper">
-								<%= link_to 'Edit', edit_guest_path(guest), class: 'container__button container__button--white' %>
-								<%= link_to 'Destroy', guest, method: :delete,class: 'container__button container__button--white' , data: { confirm: 'Are you sure?' } %>	
-								</div>
-							<% end %>
-
-						</div>
-
-		    		<% end %>
-
-		  		</div>
-
-			<% end %>
-
+			<%= render @guests %>
+				
 		</div>
-
+							 
 	</div>
 
 </div>	
