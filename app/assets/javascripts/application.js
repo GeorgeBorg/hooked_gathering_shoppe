@@ -174,7 +174,19 @@ $(document).on('ready page:load', function () {
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */   
 
   $( function() {
-    $( "#accordion" ).accordion({
-        heightStyle: "content"
+    $( "#accordion1" ).accordion({
+        heightStyle: "content",
+        collapsible: true,
+        active: false,
+    });
+    $( "#accordion2" ).accordion({
+        heightStyle: "content",
+        active: false,
+        collapsible: true
+    });
+    $( "#accordion3" ).accordion({
+        heightStyle: "content",
+        active: false,
+        collapsible: true
     });
   } );

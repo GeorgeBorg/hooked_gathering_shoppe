@@ -35,7 +35,7 @@
 
 	@include breakpoint(small-medium) {
 		display:block !important;
-		float: left;
+		float:none;
 	}
 
 	@include bem-element(listItem) {
@@ -74,12 +74,4 @@
 		
 	}
 
-}
-
-@include bem-block(nav, right ) {
-	float: none;
-	
-	@include breakpoint(small-medium) {
-		float: right;
-	}
 }

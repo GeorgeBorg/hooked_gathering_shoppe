@@ -243,17 +243,20 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 	    
 @include bem-block(accordion) {
-	width: 100%;
+	width: 33.33%;
 	margin: 0 auto;
+	padding: 20px;
+	float: left;
 	
 	@include breakpoint(small) {
-		width: 80%;
+		// width: 80%;
 	}
 	
 	@include bem-element(header) {
 		color: $black;
 		@include font-size(30);
 		cursor: pointer;
+		margin-bottom: 40px;
 		font-family: 'Permanent Marker', cursive;
 		outline:none;
 	}

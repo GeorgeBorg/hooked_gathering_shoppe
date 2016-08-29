@@ -7,25 +7,20 @@
 		<li class="nav__listItem"><p class="nav__link news-link" >news</p></li>
 		<li class="nav__listItem"><p class="nav__link lineup-link" >line-up</p></li>
 		<li class="nav__listItem"><p class="nav__link info-link" >info</p></li>
-		<li class="nav__listItem"><%= link_to "shop", shop_path, class: "nav__link" %></li>
+		<!-- <li class="nav__listItem"><%#= link_to "shop", shop_path, class: "nav__link" %></li> -->
+		<li class="nav__listItem"><%= link_to 'tickets!', tickets_path, class: 'nav__link' %></li>
 	</ul>
 
-	<ul class="nav nav--right">
-		<li class="nav__listItem">
-			<%= link_to 'tickets!', tickets_path, class: 'nav__link' %>			
-		</li>
-	</ul>
-
-	<ul class="nav nav--right">
-		<% if current_order %>
+<!-- 	<ul class="nav nav--right">
+		<%# if current_order %>
 			<li class="nav__listItem">
-				<%= link_to basket_path,  class: 'nav__link' do %>
+				<%#= link_to basket_path,  class: 'nav__link' do %>
 					<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-					<%= current_order.total_items%> /
-				  <%= number_to_currency current_order.total_before_tax %>
-				<% end %>
+					<%#= current_order.total_items%> /
+				  <%#= number_to_currency current_order.total_before_tax %>
+				<%# end %>
 			</li>
-		<% end %>
-	</ul>
+		<%# end %>
+	</ul> -->
 
 </div>
