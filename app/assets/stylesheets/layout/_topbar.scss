@@ -4,13 +4,14 @@
 @include bem-block(topbar) {
 	width: 100%;
 	background: $black;
-	z-index: 5;
 	position: fixed;
 	top: 0;
 	text-transform: uppercase;
 	text-align: center;
 	height: 60px;
 	color:$white;
+	z-index: 2;
+	display: none;
 	@extend .group;
 	
 	@include bem-element(menu) {
@@ -20,6 +21,7 @@
 		@include font-size(30);
 		line-height: 40px;
 		cursor: pointer;
+		
 		
 		@include breakpoint(small-medium) {
 			display:none;

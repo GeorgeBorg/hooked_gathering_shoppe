@@ -3,9 +3,11 @@
 -------------------------------------------------- */
 
 .footer {
-	background-color: $black;
+	background-color: $white;
 	z-index: 5;
+	text-align: right;
+	
 	img {
-		width: 100%;
+		width: 20%;
 	}
 }

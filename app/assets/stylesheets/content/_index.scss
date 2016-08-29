@@ -37,7 +37,10 @@
 @include bem-block(section, divider) {
 	padding: 0;
 	background-color: $black;
+}
 
+@include bem-block(section, slider) {
+	padding: 0;
 }
 
 
@@ -253,10 +256,9 @@
 	}
 	
 	@include bem-element(header) {
-		color: $black;
+		color: $white;
 		@include font-size(30);
 		cursor: pointer;
-		margin-bottom: 40px;
 		font-family: 'Permanent Marker', cursive;
 		outline:none;
 	}
@@ -267,5 +269,6 @@
 
 	@include bem-element(text) {
 		@include font-size(16);
+		color: $white;
 	}
 }

@@ -1,5 +1,5 @@
 <div class="container container--quarter container--zoom">
-	<%= image_tag(guest.picture.url(:square), class: "container__image ") %>
+	<%= image_tag(guest.picture.url(:square), class: "container__image slider__image ") %>
 	<h3 class="container__header container__header--white"><%= guest.name %></h3>
 	<div class="container__text container__text--white"><%= guest.bio %></div>
 	<% if logged_in?  %>

@@ -1,7 +1,9 @@
 <%= render 'cover' %>
 
 <!-- News -->
-
+<div class="section" id="countdown">
+	
+</div>
 
 <div class="section" id="news">
 
@@ -36,28 +38,51 @@
 
 		<h2 class="section__header section__header--white">The Line-up</h2>
 
-		<%= render @guests %>	
+		<div class="slider" id="guest-slider">
 
-		<div class="container">
-			<h3 class="container__header container__header--white">
-				<%= link_to 'See More!', guests_path %>
-			</h3>
+			<% @guests.each_slice(4) do |slice| -%>
+			  
+				<div class="slider__element">
+			    
+					<% slice.each do |guest| -%>
+
+						<div class="container container--quarter container--zoom">
+							<%= image_tag(guest.picture.url(:square), class: "container__image slider__image ") %>
+							<h3 class="container__header container__header--white"><%= guest.name %></h3>
+							<div class="container__text container__text--white"><%= guest.bio %></div>
+							
+							<% if logged_in?  %>
+								<div class="container__button-wrapper">
+								<%= link_to 'Edit', edit_guest_path(guest), class: 'container__button container__button--white' %>
+								<%= link_to 'Destroy', guest, method: :delete,class: 'container__button container__button--white' , data: { confirm: 'Are you sure?' } %>	
+								</div>
+							<% end %>
+
+						</div>
+
+		    		<% end %>
+
+		  		</div>
+
+			<% end %>
+
 		</div>
 
 	</div>
+
 </div>	
 
 <div class="section section--divider">
-	<%= image_tag("cover.jpg", class: "section__image") %>
+	<%= image_tag("banner1.jpg", class: "section__image") %>
 </div>
 
 
 <!-- Info -->
 
 
-<div class="section" id="info">
+<div class="section section--black" id="info">
 
-	<div class="section__header">Information</div>
+	<div class="section__header section__header--white">Information</div>
 	
 	<div class="container">
 		<div id="accordion1" class="accordion">
@@ -135,8 +160,8 @@
 
 <!-- Sponsers -->
 
-<div class="section">
-	<div class="slider">
+<div class="section section--slider">
+	<div class="slider" id="sponsor-slider">
 						
 		<div class="slider__element">
 		
