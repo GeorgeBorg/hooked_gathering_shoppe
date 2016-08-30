@@ -53,7 +53,7 @@ end
 
 group :development do
 
-	gem 'capistrano'
+	gem 'capistrano', '~> 3.6.1'
 	gem 'capistrano-rails', '~> 1.1', '>= 1.1.6'
 	gem 'capistrano-rvm', github: "capistrano/rvm"
 	gem 'capistrano-rails-console'
