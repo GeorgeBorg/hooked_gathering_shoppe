@@ -206,6 +206,14 @@
 	text-align: right;
 }
 
+@include bem-block(container, no-padding) {
+	padding: 0 10px;
+	
+	@include breakpoint(small) {
+			padding: 10px;
+	}
+}
+
 @include bem-block(container, zoom) {
 		&:hover img {
 		-webkit-transform: scale(1.05);
@@ -257,44 +265,228 @@
 	}
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Countdown -- DIRT
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 .clock {
-    width: 690px;
+    width: 273px;
     margin: 0 auto;
+    
+    @include breakpoint(small) {
+	 	width: 482px;
+	}
+
+    @include breakpoint(medium) {
+	 	width: 690px;
+	}
+   
+}
+    
+.flip-clock-wrapper ul li a div div.inn {
+	@include font-size(20);
+	border-radius: 3px;
+
+	@include breakpoint(small) {
+		@include font-size(35);
+		border-radius: 4.5px;
+	}
+
+	@include breakpoint(medium) {
+		@include font-size(50);
+		border-radius: 6px;
+	}
+}
+
+.flip-clock-wrapper ul {
+	width: 23px;
+	height: 33px;
+	margin: 2px;
+
+	@include breakpoint(small) {
+		width: 41.5px;
+		height: 61.5px;
+		margin: 3.5px;
+	}
+
+	@include breakpoint(medium) {
+		width: 60px;
+		height: 90px;
+		margin: 5px;
+	}
+}
+
+.flip-clock-wrapper ul li {
+	line-height: 30px;
+	
+	@include breakpoint(small) {
+		line-height: 58.5px;
+	}
+
+	@include breakpoint(medium) {
+		line-height: 87px;
+	}
+	
+}
+
+.flip-clock-wrapper ul li a div {
+	height: 49%;
+	
+	@include breakpoint(small) {
+		height: 48%;
+	}
+
+	@include breakpoint(medium) {
+		height: 50%;
+	}
+}
+
+.flip-clock-dot {
+	height: 5px;
+	width: 5px;
+	left: 2.5px;
+
+	@include breakpoint(small) {
+		height: 7.5px;
+		width: 7.5px;
+		left: 3.75px;
+	}
+
+	@include breakpoint(medium) {
+		height: 10px;
+		width: 10px;
+		left: 5px;
+	}
+}
+
+.flip-clock-dot.top {
+    top: 8px;
+
+	@include breakpoint(small) {
+	    top: 19px;
+	}
+
+	@include breakpoint(medium) {
+		top: 30px
+	}
+}
+
+.flip-clock-dot.bottom {
+    bottom: 8px;
+
+	@include breakpoint(small) {
+	    bottom: 19px;
+	}
+
+	@include breakpoint(medium) {
+		bottom: 30px
+	}
+}
+
+.flip-clock-divider {
+	height: 37px;
+	width: 10px;
+	
+	@include breakpoint(small) {
+		height: 68.5px;
+		width: 15px;
+	}
+
+	@include breakpoint(medium) {
+		height: 100px;
+		width: 20px;
+	}
+}
+
+.flip-clock-wrapper ul li a div.down {
+	border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    
+    @include breakpoint(small) {
+		border-bottom-left-radius: 4.5px;
+    	border-bottom-right-radius: 4.5px;
+	}
+
+	@include breakpoint(medium) {
+		border-bottom-left-radius: 6px;
+    	border-bottom-right-radius: 6px;
+	}
 }
 
 .countdown {
-	display: none;
-
-	@include breakpoint(medium) {
-		display: block;
-	}
-
+	
 	.countdown-headings {
-	 	width: 690px;
+ 	    width: 273px;
 	 	margin: 0 auto;
+	 	
+	 	@include breakpoint(small) {
+			width: 482px;
+		}
+
+		@include breakpoint(medium) {
+			width: 690px;
+		}
 
 		.countdown-title {
 			float: left;
 			color: $white;
-			margin: 0 57px;
-			@include font-size(24);
+			@include font-size(12);
+			
+			@include breakpoint(small) {
+				@include font-size(18);
+			}
+
+			@include breakpoint(medium) {
+				@include font-size(24);
+			}
 		}
 
 		.days {
-			margin: 0 79px;
+			margin: 0 27px;
+			
+			@include breakpoint(small) {
+				margin: 0 53px;
+			}
+
+			@include breakpoint(medium) {
+				margin: 0 79px;
+			}
 		}
 
 		.hours {
-			margin: 0 53px;
+			margin: 0 19px;
+			
+			@include breakpoint(small) {
+				margin: 0 36px;
+			}
+
+			@include breakpoint(medium) {
+				margin: 0 53px;
+			}
 		}
 
 		.mins {
-			margin: 0 27px;
+			margin: 0 7px;
+			
+			@include breakpoint(small) {
+				margin: 0 17px;
+			}
+
+			@include breakpoint(medium) {
+				margin: 0 27px;
+			}
 		}
 
 		.secs {
-			margin: 0 0 0 40px;
+			margin: 0 0 0 9px;
+			
+			@include breakpoint(small) {
+				margin: 0 0 0 24.5px;
+			}
+
+			@include breakpoint(medium) {
+				margin: 0 0 0 40px;
+			}
 		}
 
 	}
