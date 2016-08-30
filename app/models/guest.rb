@@ -30,9 +30,9 @@ class Guest < ActiveRecord::Base
 validates_presence_of :name
 
 # Validate content type
-validates_attachment_content_type :picture, content_type: /\Aimage/
+validates_attachment_content_type :picture, content_type: ["image/jpeg", "image/gif", "image/png"]
 # Validate filename
-validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/]		
+validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/, /gif\Z/]		
 
 # ------------------------------------------------------------------------------
 # Callbacks

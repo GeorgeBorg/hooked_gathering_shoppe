@@ -168,10 +168,11 @@
 		width: 33%;
 	}
 }
+
 @include bem-block(container, stay-third) {
 	width: 100%;
 
-	@include breakpoint(small) {
+	@include breakpoint(medium) {
 		width: 33%;
 	}
 }
@@ -281,19 +282,19 @@
 		}
 
 		.days {
-			margin: 0 80px;
+			margin: 0 79px;
 		}
 
 		.hours {
-			margin: 0 55px;
+			margin: 0 53px;
 		}
 
 		.mins {
-			margin: 0 25px;
+			margin: 0 27px;
 		}
 
 		.secs {
-			margin: 0 0 0 38px;
+			margin: 0 0 0 40px;
 		}
 
 	}
@@ -305,14 +306,9 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 	    
 @include bem-block(accordion) {
-	width: 33.33%;
 	margin: 0 auto;
 	padding: 20px;
 	float: left;
-	
-	@include breakpoint(small) {
-		// width: 80%;
-	}
 	
 	@include bem-element(header) {
 		color: $white;
