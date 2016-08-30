@@ -20,6 +20,18 @@
 		}
 	}
 
+	@include bem-element(sub-header) {
+		text-align: center;
+		font-family: 'Permanent Marker', cursive;
+		@include font-size(20);
+		margin-top: 10px;
+		font-weight:400;
+		
+		@include breakpoint(medium) {
+			@include font-size(40);
+		}
+	}
+
 	@include bem-element(header, white) {
 		color: $white;
 	}
@@ -242,6 +254,50 @@
 			margin: 0 auto;
 		}
 	}
+}
+
+
+.clock {
+    width: 690px;
+    margin: 0 auto;
+}
+
+.countdown {
+	display: none;
+
+	@include breakpoint(medium) {
+		display: block;
+	}
+
+	.countdown-headings {
+	 	width: 690px;
+	 	margin: 0 auto;
+
+		.countdown-title {
+			float: left;
+			color: $white;
+			margin: 0 57px;
+			@include font-size(24);
+		}
+
+		.days {
+			margin: 0 80px;
+		}
+
+		.hours {
+			margin: 0 55px;
+		}
+
+		.mins {
+			margin: 0 25px;
+		}
+
+		.secs {
+			margin: 0 0 0 38px;
+		}
+
+	}
+
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
