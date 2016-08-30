@@ -117,6 +117,9 @@ $(document).on('ready page:load', function () {
       infinite: true,
       slidesPerRow: 4,
       rows: 2,
+      autoplay: true,
+      arrows: false,
+      autoplaySpeed: 5000,
       responsive: [
           {
             breakpoint: 800,
