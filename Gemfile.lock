@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/capistrano/rvm.git
+  revision: 9cfef39cf0022839dca6b5b330dfefeb5fc363e7
+  specs:
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+
+GIT
   remote: https://github.com/JClackett/shoppe.git
   revision: 6be9350859974eea4059e7027d2e32f8f9bc6b5f
   specs:
@@ -60,20 +68,37 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    airbrussh (1.1.0)
+      sshkit (>= 1.6.1, != 1.7.0)
     arel (6.0.3)
     awesome_nested_set (3.0.3)
       activerecord (>= 4.0.0, < 5)
-    aws-sdk (2.4.4)
-      aws-sdk-resources (= 2.4.4)
-    aws-sdk-core (2.4.4)
+    aws-sdk (2.5.6)
+      aws-sdk-resources (= 2.5.6)
+    aws-sdk-core (2.5.6)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.4.4)
-      aws-sdk-core (= 2.4.4)
+    aws-sdk-resources (2.5.6)
+      aws-sdk-core (= 2.5.6)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.5)
+    capistrano (3.6.1)
+      airbrussh (>= 1.0.0)
+      capistrano-harrow
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.1.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-harrow (0.5.3)
+    capistrano-rails (1.1.7)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rails-console (1.0.2)
+      capistrano (>= 3.1.0, < 4.0.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -96,7 +121,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     dynamic_form (1.1.4)
     erubis (2.7.0)
-    excon (0.51.0)
+    excon (0.52.0)
     execjs (2.7.0)
     figaro (1.1.1)
       thor (~> 0.14)
@@ -136,7 +161,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.10.0)
+    fog-aws (0.11.0)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -187,7 +212,7 @@ GEM
     fog-serverlove (0.1.2)
       fog-core
       fog-json
-    fog-softlayer (1.1.3)
+    fog-softlayer (1.1.4)
       fog-core
       fog-json
     fog-storm_on_demand (0.1.1)
@@ -238,7 +263,7 @@ GEM
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     mime-types (2.99.2)
-    mimemagic (0.3.1)
+    mimemagic (0.3.2)
     mini_magick (4.2.10)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
@@ -247,6 +272,8 @@ GEM
       rest-client (~> 1.8)
     multi_json (1.12.1)
     mysql2 (0.4.4)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
     netrc (0.11.0)
     nifty-dialog (1.0.7)
@@ -320,7 +347,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    spreadsheet (1.1.2)
+    spreadsheet (1.1.3)
       ruby-ole (>= 1.0)
     spring (1.7.2)
     sprockets (3.7.0)
@@ -330,15 +357,18 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sshkit (1.11.2)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (5.0.0)
+    turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.1)
+    uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -356,6 +386,10 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk (>= 2.0.34)
   byebug
+  capistrano (~> 3.6.1)
+  capistrano-rails (~> 1.1, >= 1.1.6)
+  capistrano-rails-console
+  capistrano-rvm!
   coffee-rails (~> 4.1.0)
   figaro
   jbuilder (~> 2.0)
