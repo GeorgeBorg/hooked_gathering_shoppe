@@ -38,14 +38,10 @@
 
 		<h2 class="section__header section__header--white">The Line-up</h2>
 
-		<div class="guest-slider">
+		<%= render @guests %>	
 
-			<%= render @guests %>
-				
-		</div>
-							 
 	</div>
-
+	
 </div>	
 
 <div class="section section--divider">
@@ -137,24 +133,15 @@
 <!-- Sponsers -->
 
 <div class="section section--slider">
-	<div class="slider" id="sponsor-slider">
-						
-		<div class="slider__element">
-		
-			<%= image_tag("adam-conn.png", class: "slider__image") %>
-			<%= image_tag("bluesquare.png", class: "slider__image") %>
-			<%= image_tag("gmeente.png", class: "slider__image") %>
-		
-		</div>
 	
-		<div class="slider__element">
-		
-			<%= image_tag("kozen.png", class: "slider__image") %>
-			<%= image_tag("invincible.png", class: "slider__image") %>
-			<%= image_tag("shutup&trick.png", class: "slider__image") %>
-	
-		
-		</div>
+	<div class="sponsor-slider">
+					
+		<div><%= image_tag("adam-conn.png", class: "slider__image") %></div>
+		<div><%= image_tag("bluesquare.png", class: "slider__image") %></div>
+		<div><%= image_tag("gmeente.png", class: "slider__image") %></div>
+		<div><%= image_tag("kozen.png", class: "slider__image") %></div>
+		<div><%= image_tag("invincible.png", class: "slider__image") %></div>
+		<div><%= image_tag("shutup&trick.png", class: "slider__image") %></div>
 	
 	</div>
 </div>

@@ -149,6 +149,17 @@ $(document).on('ready page:load', function () {
     });
 });
 
+$(document).on('ready page:load', function () {
+    $('.sponsor-slider').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+    });
+});
+
 
 /* --------------------------------------------------
    Hide Flash Messages
