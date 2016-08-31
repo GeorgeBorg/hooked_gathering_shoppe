@@ -21,7 +21,7 @@
 		font-variant: small-caps;
 		
 		@include breakpoint(medium) {
-			@include font-size(60);
+			@include font-size(50);
 		}
 	}
 
@@ -102,15 +102,17 @@
 
 	@include bem-element(iframe) {
 		width: 100%;
+		margin: 0 auto;
 		border:none;
 		height: 300px;
 		
 		@include breakpoint(small) {
-			height: 400px;
+			width: 80%;	
 		}
 
 		@include breakpoint(medium) {
-			height: 500px;
+			height: 400px;
+			width: 70%;
 		}
 	}
 	

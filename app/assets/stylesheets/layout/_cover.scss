@@ -110,11 +110,7 @@
 
 	@include bem-element(subheader) {
 		margin-top: 10px;
-		width: 60%;
-		
-		@include breakpoint(medium) {
-			width: 25%;
-		}
+                    @include font-size(40);
 	}
 
 }
