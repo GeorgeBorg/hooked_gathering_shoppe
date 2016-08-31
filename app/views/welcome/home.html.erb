@@ -19,7 +19,7 @@
 
 	<div class="content-wrapper">
 
-		<h2 class="section__header">News</h2>
+		<h2 class="section__header">news</h2>
 		
 		<div class="container container--half">
 			<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F763020623758888&amp;width=650&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=450" scrolling="yes" style="height:450px;  " class="container__iframe" allowtransparency="true" frameborder="0"></iframe>
@@ -30,8 +30,9 @@
 			<script src="https://snapwidget.com/js/snapwidget.js"></script>
 			<iframe src="https://snapwidget.com/embed/241718" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; "></iframe>
 		</div>
-
 		<div class="container">
+			<h3 class="container__header">checkout last years video</h3>
+
 			<iframe src="http://www.youtube.com/embed/?listType=user_uploads&amp;list=amsterdamconnection" width="480" height="500" class="container__iframe"></iframe>              
 		</div>
 
@@ -46,13 +47,18 @@
 
 	<div class="content-wrapper">
 
-		<h2 class="section__header section__header--white">The Line-up</h2>
+		<h2 class="section__header section__header--white">the line-up</h2>
+		
 
-		<%= render @guests %>	
+		<div class="guest-slider">
+			<%= render @guests %>	
+		</div>
 
 	</div>
 	
 </div>	
+
+<!-- Divider -->
 
 <div class="section section--divider">
 	<%= image_tag("banner1.jpg", class: "section__image") %>
@@ -76,30 +82,31 @@
 </div>
 
 
+
 <!-- Info -->
 
 
 <div class="section section--black" id="info">
 
-	<div class="section__header section__header--white">Information</div>
+	<div class="section__header section__header--white">information</div>
 	
 	<div class="container">
 		<div id="accordion1" class="container--stay-third accordion">
-			<h3 class="accordion__header" class="accordion__header">When?</h3>
+			<h3 class="accordion__header" class="accordion__header">when?</h3>
 			<p class="accordion__text">
 				Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
 				ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
 				amet, nunc. Nam a nibh. Donec suscipit eros.
 			</p>
 	
-			<h3 class="accordion__header">Where?</h3>
+			<h3 class="accordion__header">where?</h3>
 			<p class="accordion__text">
 				Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
 				purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
 				velit, faucibus interdum tellus libero ac justo.
 			</p>
 	
-			<h3 class="accordion__header">Any Questions?</h3>
+			<h3 class="accordion__header">any questions?</h3>
 			<p class="accordion__text">
 				Cras dictum. Pellentesque habitant morbi tristique senectus et netus
 				et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
@@ -108,21 +115,21 @@
 		</div>
 	
 		<div id="accordion2" class="container--stay-third accordion">
-			<h3 class="accordion__header" class="accordion__header">When?</h3>
+			<h3 class="accordion__header" class="accordion__header">when?</h3>
 			<p class="accordion__text">
 				Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
 				ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
 				amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi.
 			</p>
 	
-			<h3 class="accordion__header">Where?</h3>
+			<h3 class="accordion__header">where?</h3>
 			<p class="accordion__text">
 				Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
 				purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
 				velit, faucibus interdum tellus libero ac justo.
 			</p>
 	
-			<h3 class="accordion__header">Any Questions?</h3>
+			<h3 class="accordion__header">any questions?</h3>
 			<p class="accordion__text">
 				Cras dictum. Pellentesque habitant morbi tristique senectus et netus
 				et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
@@ -131,21 +138,21 @@
 		</div>
 
 		<div id="accordion3" class="container--stay-third accordion">
-			<h3 class="accordion__header" class="accordion__header">When?</h3>
+			<h3 class="accordion__header" class="accordion__header">when?</h3>
 			<p class="accordion__text">
 				Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
 				ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
 				amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi.
 			</p>
 	
-			<h3 class="accordion__header">Where?</h3>
+			<h3 class="accordion__header">where?</h3>
 			<p class="accordion__text">
 				Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
 				purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
 				velit, faucibus interdum tellus libero ac justo.
 			</p>
 	
-			<h3 class="accordion__header">Any Questions?</h3>
+			<h3 class="accordion__header">any questions?</h3>
 			<p class="accordion__text">
 				Cras dictum. Pellentesque habitant morbi tristique senectus et netus
 				et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
@@ -155,5 +162,11 @@
 	
 	</div>
 
+</div>
+
+<!-- Divider -->
+
+<div class="section section--divider">
+	<%= image_tag("cover.gif", class: "section__image") %>
 </div>
 

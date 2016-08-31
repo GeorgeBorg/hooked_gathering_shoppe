@@ -16,25 +16,12 @@
     
 	@include bem-element(header) {
 		text-align: center;
-		font-family: 'Permanent Marker', cursive;
-		@include font-size(40);
+		@include font-size(30);
 		margin-top: 10px;
-		font-weight:800;
+		font-variant: small-caps;
 		
 		@include breakpoint(medium) {
-			@include font-size(80);
-		}
-	}
-
-	@include bem-element(sub-header) {
-		text-align: center;
-		font-family: 'Permanent Marker', cursive;
-		@include font-size(20);
-		margin-top: 10px;
-		font-weight:400;
-		
-		@include breakpoint(medium) {
-			@include font-size(40);
+			@include font-size(60);
 		}
 	}
 
@@ -79,9 +66,10 @@
 
 	@include bem-element(header) {
 		color:$black;
+		font-variant: small-caps;
 		margin-left:10px;
 		margin-right: 10px;
-		@include font-size(22);
+		@include font-size(24);
 	}
 
 	@include bem-element(header, white) {
@@ -512,8 +500,8 @@
 		color: $white;
 		@include font-size(30);
 		cursor: pointer;
-		font-family: 'Permanent Marker', cursive;
 		outline:none;
+		font-variant: small-caps;
 	}
 
 	@include bem-element(header, $pseudo-class: "hover") {

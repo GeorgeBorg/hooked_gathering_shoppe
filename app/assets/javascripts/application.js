@@ -18,14 +18,13 @@
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
    Cover gif
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
    setTimeout(function(){     
-    $(".loader").fadeOut("slow");
-    $(".topbar").fadeIn("slow");
-    $('html, body').css({
-        'overflow': 'auto',
-        'height': 'auto'
-    }) 
-}, 3000);
+      $(".loader").fadeOut("slow");
+      $(".topbar").fadeIn("slow");
+}, 1000);
+
+
 
 
 
@@ -122,7 +121,7 @@ $(document).on('ready page:load', function () {
       rows: 2,
       autoplay: true,
       arrows: false,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 3000,
       responsive: [
           {
             breakpoint: 800,
