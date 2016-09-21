@@ -27,6 +27,32 @@
 			display:none;
 		}
 	}
+
+	@include bem-element(fb) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-transform: lowercase;
+		text-transform: capitalize;
+		font-weight: 700;
+		@include font-size(15);
+		margin-left: 15px;
+		font-family: 'Raleway', sans-serif;
+		
+		.fa-facebook {
+			@include font-size(25);	
+		}
+
+		&::after {
+			content: "like HOOKED";
+			margin-left: 10px;
+			line-height: 60px;
+		}
+	}
+
+	@include bem-element(fb, $pseudo-class: hover) {
+			color:$red1;
+	}
 }
 
 @include bem-block(topbar, scrolled) {

@@ -108,6 +108,8 @@
 
 	@include bem-element(subheader) {
 		margin-top: 10px;
+		font-family: 'helvetica', sans-serif;
+		font-weight: 700;
 	}
 
 	@include bem-element(timer) {
@@ -131,14 +133,14 @@
             @include bem-element(image) {
                     margin-top: 0px;
                     right: 50px;
-                    bottom:0;
+                    bottom: 40px;
                     z-index: 101;
                     width: 60%;	
                     position: absolute;	
                    
                     @include breakpoint(medium) {
                     	margin-top: 120px;
-
+                    	bottom: 10px;
                         width: 40%;
                     }
             }
