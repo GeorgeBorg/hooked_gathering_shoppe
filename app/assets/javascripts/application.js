@@ -33,9 +33,9 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 $(document).on('ready page:load', function () {
 
-      $("#counter").countdown("2016/12/16", function(event) {
+      $("#counter").countdown("2016/12/16 14:00:00", function(event) {
         $(this).text(
-          event.strftime('%D days %H:%M:%S')
+          event.strftime('%D days %H hours %M minutes and %S seconds')
         );
       });
 
