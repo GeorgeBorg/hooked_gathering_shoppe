@@ -169,10 +169,18 @@
 	}
 }
 
-@include bem-block(container, stay-third) {
+@include bem-block(container, stay-third-medium) {
 	width: 100%;
 
 	@include breakpoint(medium) {
+		width: 33%;
+	}
+}
+
+@include bem-block(container, stay-third-small) {
+	width: 100%;
+
+	@include breakpoint(small) {
 		width: 33%;
 	}
 }
