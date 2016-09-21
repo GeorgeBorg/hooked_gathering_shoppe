@@ -63,25 +63,12 @@
     z-index: 999999;
 }
 
-.hero__header:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.6;
-    background-image: url("/images/cover.jpg");
-    background-repeat: no-repeat;
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
+.particles-js-canvas-el {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
 }
 
 @include bem-block(hero) {
@@ -91,37 +78,50 @@
 	background-color: black;
 	width: 100%;
 	height: 100vh;
+	     user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
 	opacity: 1;
 	min-height:550px;
+	text-align: left;	
 	margin: 0;
-	text-align: center;		
 	color:$white;
 
 	@include bem-element(header) {
-		margin-top: 180px;
-		@include font-size(40);
+		margin-top: 200px;
+		margin-left: 0px;
+		position: relative; 
+		z-index: 100;		
+		text-align: center;
+		@include font-size(48);
                         font-variant: small-caps;
-	    	text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 
 		@include breakpoint(medium) {
+			margin-top: 150px;
+			text-align: left;	
+			margin-left: 100px;
 			@include font-size(70);
 		}
 	}
 
 	@include bem-element(subheader) {
 		margin-top: 10px;
-                        @include font-size(20);
-                        @include breakpoint(small) {
-                            @include font-size(40)
-                        }
 	}
 
             @include bem-element(image) {
-                    margin-top: 40px;
-                    width: 60%;
-
+                    margin-top: 0px;
+                    right: 50px;
+                    bottom:0;
+                    z-index: 5;
+                    width: 60%;	
+                    position: absolute;	
+                   
                     @include breakpoint(medium) {
-                        width: 25%;
+                    	margin-top: 120px;
+
+                        width: 40%;
                     }
             }
 

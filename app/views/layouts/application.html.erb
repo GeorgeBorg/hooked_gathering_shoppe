@@ -18,13 +18,13 @@
 		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/flipclock/0.7.7/flipclock.min.js"></script>
-
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 	</head>
 
-	<body id="home">
+	<body>
 
 		<div class="loader"></div>
 
@@ -39,6 +39,13 @@
 
 		<%= yield %>
 		<%= render 'footer' %>
+
+		<script>
+			/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+			   particles
+			------------------------------------------------------------------------------------------------------------------------------------------------------ */
+			particlesJS.load('particles-js', '/particles.json', function() {});
+		</script>
 	</body>
 
 </html>

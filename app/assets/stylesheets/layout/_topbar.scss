@@ -3,7 +3,7 @@
 -------------------------------------------------- */
 @include bem-block(topbar) {
 	width: 100%;
-	background: $black;
+	background: transparant;
 	position: fixed;
 	top: 0;
 	text-transform: uppercase;
@@ -29,6 +29,10 @@
 	}
 }
 
+@include bem-block(topbar, scrolled) {
+	background-color: $black;
+	transition: all 1.2s;
+}
 
 @include bem-block(nav) {
 	text-align:center;
