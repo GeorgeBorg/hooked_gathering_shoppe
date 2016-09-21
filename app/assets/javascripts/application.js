@@ -24,42 +24,40 @@
       $(".topbar").fadeIn("slow");
 }, 1000);
 
-
 /* --------------------------------------------------
    Topbar on scroll
 -------------------------------------------------- */
 $(window).scroll(function(){
 
-  var scroll = $(window).scrollTop();
+      var scroll = $(window).scrollTop();
 
-            if (scroll > $('.scrollPoint').offset().top ) {
-                    $('.topbar').addClass('topbar--scrolled');
-            }
+      if (scroll > $('.scrollPoint').offset().top ) {
+              $('.topbar').addClass('topbar--scrolled');
+      }
 
-            if (scroll <= $('.scrollPoint').offset().top ) {
-                    $('.topbar').removeClass('topbar--scrolled');
-            }
+      if (scroll <= $('.scrollPoint').offset().top ) {
+              $('.topbar').removeClass('topbar--scrolled');
+      }
 
 });
+// $(document).on('ready page:load', function () {
+//     $("#black-loading").delay(2000).fadeOut("slow");
+//     $("#gif").delay(2000).fadeIn("slow").delay(4000).fadeOut("slow");
+//     $(".topbar").delay(2000).fadeIn("slow");
+//     $("#home").delay(10000).toggle();
+// });
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
    Countdown
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 $(document).on('ready page:load', function () {
-      var clock;
-      $(document).ready(function() {
-        // Grab the current date
-        var currentDate = new Date();
-        // Set some date in the future. In this case, it's always Jan 1
-        var futureDate  = new Date(2016, 11, 16, 14, 00, 00);
-        // Calculate the difference in seconds between the future and current date
-        var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-        // Instantiate a coutdown FlipClock
-        clock = $('.clock').FlipClock(diff, {
-          clockFace: 'DailyCounter',
-          countdown: true,
-        });
+
+      $("#counter").countdown("2016/12/16 14:00:00", function(event) {
+        $(this).text(
+          event.strftime('%D d %H h %M m %S s')
+        );
       });
+
 });
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -78,11 +78,11 @@
 	background-color: black;
 	width: 100%;
 	height: 100vh;
-	     user-select: none;
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
+	user-select: none;
+	-khtml-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
 	opacity: 1;
 	min-height:550px;
 	text-align: left;	
@@ -101,13 +101,31 @@
 		@include breakpoint(medium) {
 			margin-top: 150px;
 			text-align: left;	
-			margin-left: 100px;
+			margin-left: 50px;
 			@include font-size(70);
 		}
 	}
 
 	@include bem-element(subheader) {
 		margin-top: 10px;
+	}
+
+	@include bem-element(timer) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		font-family: 'helvetica', sans-serif;
+		font-variant: small-caps;
+		margin-left: 0px;
+		@include font-size(40);
+		margin-bottom: 0px;
+		display: none;
+		
+		@include breakpoint(medium) {
+			margin-left: 50px;
+			display: block;
+			margin-bottom: 50px;
+		}
 	}
 
             @include bem-element(image) {
