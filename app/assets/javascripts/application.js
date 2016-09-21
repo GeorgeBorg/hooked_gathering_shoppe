@@ -32,20 +32,13 @@
    Countdown
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 $(document).on('ready page:load', function () {
-      var clock;
-      $(document).ready(function() {
-        // Grab the current date
-        var currentDate = new Date();
-        // Set some date in the future. In this case, it's always Jan 1
-        var futureDate  = new Date(2016, 11, 16, 14, 00, 00);
-        // Calculate the difference in seconds between the future and current date
-        var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-        // Instantiate a coutdown FlipClock
-        clock = $('.clock').FlipClock(diff, {
-          clockFace: 'DailyCounter',
-          countdown: true,
-        });
+
+      $("#counter").countdown("2016/12/16", function(event) {
+        $(this).text(
+          event.strftime('%D days %H:%M:%S')
+        );
       });
+
 });
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
