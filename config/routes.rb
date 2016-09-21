@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   
 
 
-  resources :guests, except: :show
+  resources :guests, except: [:index, :show]
   
   get 'tickets', to: 'welcome#tickets'
 

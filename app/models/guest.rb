@@ -1,4 +1,6 @@
 class Guest < ActiveRecord::Base
+
+	before_save :sanitize_guest
 # ------------------------------------------------------------------------------
 # Includes & Extensions
 # ------------------------------------------------------------------------------
@@ -38,7 +40,9 @@ validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/, /gif\Z/]
 # Callbacks
 # ------------------------------------------------------------------------------
 
-
+def sanitize_guest
+	self.name = self.name.downcase
+end
 
 # ------------------------------------------------------------------------------
 # Nested Attributes

@@ -1,4 +1,10 @@
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Dirty Cover
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #000; z-index:9999;}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
    Section
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
@@ -10,25 +16,12 @@
     
 	@include bem-element(header) {
 		text-align: center;
-		font-family: 'Permanent Marker', cursive;
-		@include font-size(40);
+		@include font-size(30);
 		margin-top: 10px;
-		font-weight:800;
+		font-variant: small-caps;
 		
 		@include breakpoint(medium) {
-			@include font-size(80);
-		}
-	}
-
-	@include bem-element(sub-header) {
-		text-align: center;
-		font-family: 'Permanent Marker', cursive;
-		@include font-size(20);
-		margin-top: 10px;
-		font-weight:400;
-		
-		@include breakpoint(medium) {
-			@include font-size(40);
+			@include font-size(50);
 		}
 	}
 
@@ -73,9 +66,10 @@
 
 	@include bem-element(header) {
 		color:$black;
+		font-variant: small-caps;
 		margin-left:10px;
 		margin-right: 10px;
-		@include font-size(22);
+		@include font-size(24);
 	}
 
 	@include bem-element(header, white) {
@@ -108,15 +102,18 @@
 
 	@include bem-element(iframe) {
 		width: 100%;
+		margin: 0 auto;
 		border:none;
-		height: 300px;
+		height: 200px;
 		
 		@include breakpoint(small) {
-			height: 400px;
+			width: 80%;	
+			height: 300px;
 		}
 
 		@include breakpoint(medium) {
-			height: 500px;
+			height: 400px;
+			width: 70%;
 		}
 	}
 	
@@ -514,8 +511,8 @@
 		color: $white;
 		@include font-size(30);
 		cursor: pointer;
-		font-family: 'Permanent Marker', cursive;
 		outline:none;
+		font-variant: small-caps;
 	}
 
 	@include bem-element(header, $pseudo-class: "hover") {

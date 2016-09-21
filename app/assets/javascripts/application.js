@@ -19,14 +19,13 @@
    Cover gif
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-setTimeout(function(){     
-    $(".loader").fadeOut("slow");
-    $(".topbar").fadeIn("slow");
-    $('html, body').css({
-        'overflow': 'auto',
-        'height': 'auto'
-    }) 
-}, 3000);
+   setTimeout(function(){     
+      $(".loader").fadeOut("slow");
+      $(".topbar").fadeIn("slow");
+}, 1000);
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -72,13 +71,6 @@ $(document).on('ready page:load', function () {
             $(".topbar__menu").removeClass("fa-hand-scissors-o");
         }
     });
-
-
-$("#countdown").countdown("2017/01/01", function(event) {
-    $(this).text(
-      event.strftime('%D days %H:%M:%S')
-    );
-});
 });
 
 
@@ -129,7 +121,7 @@ $(document).on('ready page:load', function () {
       rows: 2,
       autoplay: true,
       arrows: false,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 3000,
       responsive: [
           {
             breakpoint: 800,

@@ -8,9 +8,9 @@ GIT
 
 GIT
   remote: https://github.com/JClackett/shoppe.git
-  revision: 6be9350859974eea4059e7027d2e32f8f9bc6b5f
+  revision: 001ce142ffdabee559d3f0c0541a882c3ed4511c
   specs:
-    shoppe (1.1.2)
+    shoppe (1.1.6)
       awesome_nested_set (~> 3.0.2)
       bcrypt (>= 3.1.2, < 3.2)
       carrierwave (~> 0.10.0)
@@ -73,12 +73,12 @@ GEM
     arel (6.0.3)
     awesome_nested_set (3.0.3)
       activerecord (>= 4.0.0, < 5)
-    aws-sdk (2.5.6)
-      aws-sdk-resources (= 2.5.6)
-    aws-sdk-core (2.5.6)
+    aws-sdk (2.5.7)
+      aws-sdk-resources (= 2.5.7)
+    aws-sdk-core (2.5.7)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.5.6)
-      aws-sdk-core (= 2.5.6)
+    aws-sdk-resources (2.5.7)
+      aws-sdk-core (= 2.5.7)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)

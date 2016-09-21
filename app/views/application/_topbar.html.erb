@@ -9,6 +9,9 @@
 		<li class="nav__listItem"><p class="nav__link info-link" >info</p></li>
 		<!-- <li class="nav__listItem"><%#= link_to "shop", shop_path, class: "nav__link" %></li> -->
 		<li class="nav__listItem"><%= link_to 'tickets!', tickets_path, class: 'nav__link' %></li>
+		<% if logged_in? %>
+			<li class="nav__listItem"><%= link_to 'new guest', new_guest_path, class: 'nav__link' %></li>
+		<% end %>
 	</ul>
 
 <!-- 	<ul class="nav nav--right">
