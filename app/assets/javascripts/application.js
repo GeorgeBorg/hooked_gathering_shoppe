@@ -30,12 +30,14 @@
 $(window).scroll(function(){
 
       var scroll = $(window).scrollTop();
+      var scrollalt =  $('.scrollPoint').offset().top - 100
 
-      if (scroll > $('.scrollPoint').offset().top ) {
+
+      if (scroll > scrollalt ) {
               $('.topbar').addClass('topbar--scrolled');
       }
 
-      if (scroll <= $('.scrollPoint').offset().top ) {
+      if (scroll <= scrollalt ) {
               $('.topbar').removeClass('topbar--scrolled');
       }
 
