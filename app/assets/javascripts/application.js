@@ -132,10 +132,12 @@ $(document).on('ready page:load', function () {
     $('.guest-slider').slick({
       infinite: true,
       slidesPerRow: 4,
-      rows: 2,
+      rows: 3,
       autoplay: true,
       arrows: false,
-      autoplaySpeed: 2200,
+      autoplaySpeed: 2500,
+      pauseOnFocus: false,
+      pauseOnHover: false,
       responsive: [
           {
             breakpoint: 800,
