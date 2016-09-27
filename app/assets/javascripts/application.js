@@ -238,4 +238,9 @@ $(document).on('ready page:load', function () {
         active: false,
         collapsible: true
     });
+     $( "#accordion4" ).accordion({
+        heightStyle: "content",
+        active: false,
+        collapsible: true
+    });
   } );
