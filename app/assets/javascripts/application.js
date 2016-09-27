@@ -135,7 +135,7 @@ $(document).on('ready page:load', function () {
       rows: 2,
       autoplay: true,
       arrows: false,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 2200,
       responsive: [
           {
             breakpoint: 800,
