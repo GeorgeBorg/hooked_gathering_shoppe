@@ -1,5 +1,5 @@
 <div class="container container--quarter container--zoom">
-	<%= image_tag(guest.picture.url(:square), class: "container__image") %>
+	<%= image_tag(guest.picture.url, loop: true, class: "container__image") %>
 	<h3 class="container__header container__header--white"><%= guest.name %></h3>
 	<% if logged_in?  %>
 		<div class="container__button-wrapper">
